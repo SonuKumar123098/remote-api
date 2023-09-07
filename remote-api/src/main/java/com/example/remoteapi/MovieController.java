@@ -14,14 +14,16 @@ public class MovieController {
     @GetMapping("/get-info/{id}")
     public Object getMovie(@PathVariable("id") String movieId){
         String url="you will get url from remote api along with unique key of api";
-        Object response=restTemplate.getForObject(url,Object.class);
+        String url1="https://api.themoviedb.org/3/movie/"+movieId+"?api_key=091bc2e9f9b015059c33a5d752f01b90";
+        Object response=restTemplate.getForObject(url1,Object.class);
         return response;
     }
 
     @GetMapping("/get-customized-info/{id}")
     public MovieResponse getCustomizedMovie(@PathVariable("id") String movieId){
         String url="you will get url from remote api along with unique key of api";
-        MovieResponse response=restTemplate.getForObject(url,MovieResponse.class);
+        String url1="https://api.themoviedb.org/3/movie/"+movieId+"?api_key=091bc2e9f9b015059c33a5d752f01b90";
+        MovieResponse response=restTemplate.getForObject(url1,MovieResponse.class);
         return response;
     }
 }
