@@ -29,7 +29,7 @@ public class MovieController {
     }
     //calling local api
     @GetMapping("/get-student")
-    public Object getStudent(@RequestParam("id"),int regNo){
+    public Object getStudent(@RequestParam("id") int regNo){
         String url="http//localhost/999/student/get/q="+regNo;
         Object response=restTemplate.getForObject(url,Object.class);
         return response;
